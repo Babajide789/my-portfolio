@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Button } from "./ui/button"
 import Nav from "./Nav"
 
 
@@ -10,7 +9,7 @@ export default function Header () {
                 <div className="container mx-auto flex justify-between items-center">
                     {/* LOGO */}
                     <Link href="/">
-                        <h1 className="text-4xl font-semibold">
+                        <h1 className="text-4xl font-semibold text-red-800">
                             Babajide <span className="text-accent">,</span>
                         </h1>
                     </Link>
@@ -20,7 +19,7 @@ export default function Header () {
                         <Nav/>
 
                         <Link href="/contact">
-                            <Button>Hire Me</Button>
+                            <button>Hire Me</button>
                         </Link>
                     </div>
 
