@@ -11,7 +11,7 @@ import { BsArrowUpRight, BsGithub } from "react-icons/bs"
 import Link from "next/link"
 import Image from "next/image"
 import WorkSlidersBtns from "@/components/WorkSliderBtns"
-import Tooltip from "@/components/Tooltip" // ✅ our custom tooltip
+import Tooltip from "@/components/Tooltip"
 
 const projects = [
   {
@@ -83,7 +83,7 @@ export default function Work() {
               </h2>
 
               {/* Description */}
-              <p className="text-white/60">{project.description}</p>
+              <p className="text-black">{project.description}</p>
 
               {/* Stack */}
               <ul className="flex gap-4">
@@ -103,8 +103,8 @@ export default function Work() {
                 {/* Live Project */}
                 <Link href={project.live}>
                     <Tooltip content="Live Project" position="top">
-                        <div className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                            <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                        <div className="w-[70px] h-[70px] rounded-full bg-white flex justify-center items-center group">
+                            <BsArrowUpRight className="text-black text-3xl group-hover:text-accent" />
                         </div>
                     </Tooltip>
                 </Link>
@@ -113,7 +113,7 @@ export default function Work() {
                 <Link href={project.github}>
                     <Tooltip content="Github Repository" position="bottom">
                         <div className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                            <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                            <BsGithub className="text-black text-3xl group-hover:text-accent" />
                         </div>
                     </Tooltip>
                 </Link>

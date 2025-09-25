@@ -11,7 +11,7 @@ export default function Header () {
                     {/* LOGO */}
                     <Link href="/">
                         <h1 className="text-4xl font-semibold text-red-800">
-                            Babajide <span className="text-accent">,</span>
+                            Babajide <span className="text-black">,</span>
                         </h1>
                     </Link>
 

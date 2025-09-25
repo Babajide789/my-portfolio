@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma } from "react-icons/fa"
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si"
-import { useState } from "react"
+import { motion } from "framer-motion";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { useState } from "react";
 
 const about = {
   title: "About Me",
@@ -17,7 +17,7 @@ const about = {
     { fieldName: "Freelance", fieldValue: "Available" },
     { fieldName: "Language", fieldValue: "English, Yoruba" },
   ],
-}
+};
 
 const experience = {
   title: "My Experience",
@@ -34,7 +34,7 @@ const experience = {
       duration: "2021",
     },
   ],
-}
+};
 
 const education = {
   title: "My Education",
@@ -56,7 +56,7 @@ const education = {
       duration: "2024",
     },
   ],
-}
+};
 
 const skills = {
   title: "My Skills",
@@ -70,10 +70,10 @@ const skills = {
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <FaFigma />, name: "Figma" },
   ],
-}
+};
 
 export default function Resume() {
-  const [activeTab, setActiveTab] = useState("experience")
+  const [activeTab, setActiveTab] = useState("experience");
 
   return (
     <motion.section
@@ -94,7 +94,7 @@ export default function Resume() {
               className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 ${
                 activeTab === tab
                   ? "bg-accent text-white shadow-lg scale-105"
-                  : "bg-[#1a1a1a] text-white/70 hover:text-white hover:bg-[#232329]"
+                  : "bg-neutral-800 text-neutral-300 hover:text-white hover:bg-neutral-700"
               }`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -108,18 +108,18 @@ export default function Resume() {
           {activeTab === "experience" && (
             <div>
               <h3 className="text-3xl font-bold mb-4">{experience.title}</h3>
-              <p className="text-white/70 mb-6">{experience.description}</p>
+              <p className="text-neutral-400 mb-6">{experience.description}</p>
               <div className="grid gap-6 md:grid-cols-2">
                 {experience.items.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-[#232329] hover:bg-[#2d2d33] transition-colors p-6 rounded-xl shadow-md"
+                    className="bg-neutral-800 hover:bg-neutral-700 transition-colors p-6 rounded-xl shadow-md"
                   >
                     <span className="text-accent">{item.duration}</span>
                     <h4 className="text-xl font-semibold mt-2">
                       {item.position}
                     </h4>
-                    <p className="text-white/70 mt-1">{item.company}</p>
+                    <p className="text-neutral-400 mt-1">{item.company}</p>
                   </div>
                 ))}
               </div>
@@ -130,18 +130,18 @@ export default function Resume() {
           {activeTab === "education" && (
             <div>
               <h3 className="text-3xl font-bold mb-4">{education.title}</h3>
-              <p className="text-white/70 mb-6">{education.description}</p>
+              <p className="text-neutral-400 mb-6">{education.description}</p>
               <div className="grid gap-6 md:grid-cols-2">
                 {education.items.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-[#232329] hover:bg-[#2d2d33] transition-colors p-6 rounded-xl shadow-md"
+                    className="bg-neutral-800 hover:bg-neutral-700 transition-colors p-6 rounded-xl shadow-md"
                   >
                     <span className="text-accent">{item.duration}</span>
                     <h4 className="text-xl font-semibold mt-2">
                       {item.degree}
                     </h4>
-                    <p className="text-white/70 mt-1">{item.institution}</p>
+                    <p className="text-neutral-400 mt-1">{item.institution}</p>
                   </div>
                 ))}
               </div>
@@ -152,17 +152,17 @@ export default function Resume() {
           {activeTab === "skills" && (
             <div>
               <h3 className="text-3xl font-bold mb-4">{skills.title}</h3>
-              <p className="text-white/70 mb-6">{skills.description}</p>
+              <p className="text-neutral-400 mb-6">{skills.description}</p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
                 {skills.skillList.map((skill, index) => (
                   <div
                     key={index}
-                    className="bg-[#232329] hover:bg-[#2d2d33] transition-all duration-300 flex flex-col justify-center items-center p-6 rounded-xl shadow-md group cursor-pointer"
+                    className="bg-neutral-800 hover:bg-neutral-700 transition-all duration-300 flex flex-col justify-center items-center p-6 rounded-xl shadow-md group cursor-pointer"
                   >
                     <div className="text-5xl group-hover:text-accent transition-colors duration-300">
                       {skill.icon}
                     </div>
-                    <span className="mt-2 text-white/80">{skill.name}</span>
+                    <span className="mt-2 text-neutral-300">{skill.name}</span>
                   </div>
                 ))}
               </div>
@@ -173,14 +173,14 @@ export default function Resume() {
           {activeTab === "about" && (
             <div>
               <h3 className="text-3xl font-bold mb-4">{about.title}</h3>
-              <p className="text-white/70 mb-6">{about.description}</p>
+              <p className="text-neutral-400 mb-6">{about.description}</p>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4">
                 {about.info.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-4 bg-[#232329] hover:bg-[#2d2d33] transition-colors p-4 rounded-lg"
+                    className="flex items-center gap-4 bg-neutral-800 hover:bg-neutral-700 transition-colors p-4 rounded-lg"
                   >
-                    <span className="text-white/60">{item.fieldName}:</span>
+                    <span className="text-neutral-400">{item.fieldName}:</span>
                     <span className="text-white font-medium">
                       {item.fieldValue}
                     </span>
@@ -192,5 +192,5 @@ export default function Resume() {
         </div>
       </div>
     </motion.section>
-  )
+  );
 }
