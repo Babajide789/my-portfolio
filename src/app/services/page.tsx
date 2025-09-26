@@ -8,69 +8,87 @@ const services = [
   {
     num: "01",
     title: "Web Development",
-    description: "Always working non stop",
+    description:
+      "I build modern, fast, and responsive websites tailored to user needs.",
     href: "/services/web-development",
   },
   {
     num: "02",
     title: "UI/UX",
-    description: "Always working non stop",
+    description:
+      "I design intuitive user interfaces and experiences that feel natural.",
     href: "/services/ui-ux",
   },
   {
     num: "03",
     title: "Logo Design",
-    description: "Always working non stop",
+    description:
+      "I create clean and memorable logos that represent your brand identity.",
     href: "/services/logo-design",
   },
   {
     num: "04",
     title: "SEO",
-    description: "Always working non stop",
+    description:
+      "I optimize websites for search engines to improve visibility and ranking.",
     href: "/services/seo",
   },
 ];
 
 export default function Services() {
   return (
-    <section className="min-h-[88vh] flex flex-col justify-center py-12 xl:py-8 bg-gray-50">
-      <div className="container mx-auto">
+    <section className="relative min-h-[88vh] flex flex-col justify-center py-20 bg-gradient-to-b from-gray-50 via-white to-gray-100">
+      <div className="container mx-auto px-6 md:px-12">
+        {/* Section Heading */}
+        <div className="text-center mb-14">
+          <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+            My <span className="text-primary">Services</span>
+          </h1>
+          <div className="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
+          <p className="text-gray-700 mt-4 max-w-2xl mx-auto leading-relaxed">
+            Here are the main areas where I can help bring your ideas to life.
+          </p>
+        </div>
+
+        {/* Services Grid */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{
             opacity: 1,
-            transition: { delay: 0.4, duration: 0.6, ease: "easeIn" },
+            transition: { delay: 0.3, duration: 0.6, ease: "easeInOut" },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
+          className="grid grid-cols-1 md:grid-cols-2 gap-10"
         >
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex-1 flex flex-col justify-center gap-6 group p-6 rounded-xl shadow-md bg-white hover:shadow-lg transition-shadow duration-500"
+              className="flex flex-col justify-between gap-6 p-8 rounded-2xl shadow-md bg-white hover:shadow-xl transition-all duration-500 group border border-gray-100"
             >
               {/* TOP */}
               <div className="w-full flex justify-between items-center">
-                <div className="text-5xl font-extrabold text-gray-200 group-hover:text-accent transition-all duration-500">
+                <div className="text-5xl font-extrabold text-black">
                   {service.num}
                 </div>
                 <Link
                   href={service.href}
-                  className="w-[70px] h-[70px] rounded-full bg-accent/10 group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
+                  className="w-14 h-14 rounded-full bg-accent/10 flex justify-center items-center transition-all duration-500 group-hover:bg-accent hover:-rotate-45"
                 >
-                  <BsArrowDownRight className="text-accent text-2xl group-hover:text-white transition-colors duration-500" />
+                  <BsArrowDownRight className="text-black text-xl" />
                 </Link>
               </div>
 
               {/* HEADING */}
-              <h2 className="text-2xl font-bold text-gray-900 group-hover:text-accent transition-all duration-500">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-800">
                 {service.title}
               </h2>
 
               {/* DESCRIPTION */}
-              <p className="text-gray-600">{service.description}</p>
+              <p className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors duration-500">
+                {service.description}
+              </p>
 
-              {/* BORDER */}
-              <div className="border-b border-gray-200 w-full"></div>
+              {/* BORDER LINE */}
+              <div className="border-t border-gray-200 mt-4"></div>
             </div>
           ))}
         </motion.div>
