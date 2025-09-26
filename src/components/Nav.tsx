@@ -15,7 +15,7 @@ export default function Nav() {
   const pathname = usePathname()
 
   return (
-    <nav className="flex gap-8">
+    <nav className="flex items-center gap-6">
       {links.map((link, index) => {
         const isActive =
           link.path === "/"
@@ -24,13 +24,20 @@ export default function Nav() {
 
         return (
           <Link
-            href={link.path}
             key={index}
-            className={`capitalize font-medium transition-all hover:text-black ${
-              isActive ? "text-black border-b-2 border-black" : ""
-            }`}
+            href={link.path}
+            className={`
+              relative capitalize font-medium text-sm md:text-base
+              transition-colors duration-300
+              ${isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"}
+            `}
           >
             {link.name}
+
+            {/* Active underline */}
+            {isActive && (
+              <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-primary rounded-full" />
+            )}
           </Link>
         )
       })}
