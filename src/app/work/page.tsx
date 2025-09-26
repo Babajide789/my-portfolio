@@ -29,7 +29,7 @@ const projects = [
     ],
     image: "/projects/hamtec.png",
     live: "https://hamtecproject.com",
-    github: "https://github.com/yourusername/hamtec-project",
+    github: "https://github.com/Babajide789/Hamtec-Projectt",
   },
   {
     num: "02",
@@ -39,8 +39,8 @@ const projects = [
       "A URL shortening application using TinyURL API with clean UI, caching, and responsive design.",
     stack: [{ name: "React" }, { name: "TailwindCSS" }, { name: "REST API" }],
     image: "/projects/shortly.png",
-    live: "https://tinyurl-clone.vercel.app",
-    github: "https://github.com/yourusername/tinyurl-clone",
+    live: "https://url-shortener-land-ingpage.netlify.app",
+    github: "https://github.com/Babajide789/URL-shortener",
   },
   {
     num: "03",
@@ -55,7 +55,7 @@ const projects = [
     ],
     image: "/projects/canvaslancer.png",
     live: "https://canvaslancer.vercel.app",
-    github: "https://github.com/yourusername/canvaslancer",
+    github: "https://github.com/Babajide789/canvas-lancer",
   },
   {
     num: "04",
@@ -65,8 +65,8 @@ const projects = [
       "A responsive banking landing page challenge featuring clean sections, hover effects, and modern visuals.",
     stack: [{ name: "HTML" }, { name: "CSS" }, { name: "JavaScript" }],
     image: "/projects/easybank.png",
-    live: "https://easybank-landing.vercel.app",
-    github: "https://github.com/yourusername/easybank-landing",
+    live: "https://page-easy-bank.netlify.app",
+    github: "https://github.com/Babajide789/easy-bank-landing-page",
   },
   {
     num: "05",
@@ -76,7 +76,7 @@ const projects = [
       "A bookmark manager landing page with FAQ accordion, responsive layout, and modern UI styling.",
     stack: [{ name: "React" }, { name: "CSS" }, { name: "JavaScript" }],
     image: "/projects/bookmark.png",
-    live: "https://bookmark-landing.vercel.app",
+    live: "https://bookmarkandingpage.netlify.app/",
     github: "https://github.com/yourusername/bookmark-landing",
   },
 ]
@@ -167,22 +167,30 @@ export default function Work() {
             >
               {projects.map((item, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[480px] relative group flex justify-center items-center bg-black/20 rounded-xl overflow-hidden shadow-lg">
+                  <div className="h-[480px] relative group flex justify-center items-center bg-black/20 rounded-xl overflow-hidden shadow-lg border border-white/10">
+                    {/* Fake browser bar */}
+                    <div className="absolute top-0 left-0 right-0 h-8 bg-[#2a2a2d] flex items-center gap-2 px-3 z-20">
+                      <span className="w-3 h-3 rounded-full bg-red-500"></span>
+                      <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
+                      <span className="w-3 h-3 rounded-full bg-green-500"></span>
+                    </div>
+
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-black/40 transition"></div>
+
                     {/* Image */}
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-full pt-8"> {/* padding for top bar */}
                       <Image
                         src={item.image}
                         alt={`${item.title} preview`}
                         fill
-                        priority={index === 0} // loads first slide faster
+                        priority={index === 0}
                         className="object-cover object-top"
                         sizes="(max-width: 768px) 100vw, 50vw"
                       />
-
                     </div>
                   </div>
+
                 </SwiperSlide>
               ))}
 
