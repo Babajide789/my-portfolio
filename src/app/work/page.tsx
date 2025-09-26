@@ -13,40 +13,71 @@ import Image from "next/image"
 import WorkSlidersBtns from "@/components/WorkSliderBtns"
 import Tooltip from "@/components/Tooltip"
 
+// Portfolio Projects
 const projects = [
   {
     num: "01",
-    category: "frontend",
-    title: "project 1",
-    description: "Built a responsive landing page for all devices",
-    stack: [{ name: "Html 5" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/img00.png",
-    live: "",
-    github: "",
+    category: "Fullstack",
+    title: "Hamtec Project",
+    description:
+      "A business website with modern UI, synced to GitHub and deployed on Vercel with domain setup and contact email integration.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TailwindCSS" },
+      { name: "Framer Motion" },
+      { name: "Resend API" },
+    ],
+    image: "/projects/hamtec.png",
+    live: "https://hamtecproject.com",
+    github: "https://github.com/yourusername/hamtec-project",
   },
   {
     num: "02",
-    category: "frontend",
-    title: "project 2",
-    description: "Built a responsive landing page for web devices",
-    stack: [
-      { name: "Next.js" },
-      { name: "Tailwind.css" },
-      { name: "Javascript" },
-    ],
-    image: "/img00.png",
-    live: "",
-    github: "",
+    category: "Frontend",
+    title: "TinyURL Project",
+    description:
+      "A URL shortening application using TinyURL API with clean UI, caching, and responsive design.",
+    stack: [{ name: "React" }, { name: "TailwindCSS" }, { name: "REST API" }],
+    image: "/projects/shortly.png",
+    live: "https://tinyurl-clone.vercel.app",
+    github: "https://github.com/yourusername/tinyurl-clone",
   },
   {
     num: "03",
-    category: "frontend",
-    title: "project 3",
-    description: "Built a landing page for mobile devices",
-    stack: [{ name: "Next.js" }, { name: "Css 3" }, { name: "Javascript" }],
-    image: "/img00.png",
-    live: "",
-    github: "",
+    category: "Frontend",
+    title: "Canvas Lancer",
+    description:
+      "A modern freelancer landing page concept showcasing animations, CTA sections, and a professional layout.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TailwindCSS" },
+      { name: "Framer Motion" },
+    ],
+    image: "/projects/canvaslancer.png",
+    live: "https://canvaslancer.vercel.app",
+    github: "https://github.com/yourusername/canvaslancer",
+  },
+  {
+    num: "04",
+    category: "Frontend",
+    title: "EasyBank Landing Page",
+    description:
+      "A responsive banking landing page challenge featuring clean sections, hover effects, and modern visuals.",
+    stack: [{ name: "HTML" }, { name: "CSS" }, { name: "JavaScript" }],
+    image: "/projects/easybank.png",
+    live: "https://easybank-landing.vercel.app",
+    github: "https://github.com/yourusername/easybank-landing",
+  },
+  {
+    num: "05",
+    category: "Frontend",
+    title: "Bookmark Landing Page",
+    description:
+      "A bookmark manager landing page with FAQ accordion, responsive layout, and modern UI styling.",
+    stack: [{ name: "React" }, { name: "CSS" }, { name: "JavaScript" }],
+    image: "/projects/bookmark.png",
+    live: "https://bookmark-landing.vercel.app",
+    github: "https://github.com/yourusername/bookmark-landing",
   },
 ]
 
@@ -63,60 +94,65 @@ export default function Work() {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+        transition: { delay: 0.4, duration: 0.6, ease: "easeInOut" },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+      className="min-h-[90vh] flex flex-col justify-center py-12 xl:px-0 bg-[#1a1a1d] text-white"
     >
       <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          {/* Left Side - Text */}
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* Outline Number */}
-              <div className="text-8xl leading-none font-extrabold text-transparent">
+        <div className="flex flex-col xl:flex-row xl:gap-[40px]">
+          {/* Left Side - Project Details */}
+          <div className="w-full xl:w-[50%] xl:h-[500px] flex flex-col xl:justify-between order-2 xl:order-none">
+            <div className="flex flex-col gap-6">
+              {/* Project Number */}
+              <div className="text-7xl xl:text-8xl font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
 
               {/* Category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category}
+              <h2 className="text-[38px] xl:text-[42px] font-bold leading-tight capitalize text-accent">
+                {project.title}
               </h2>
 
               {/* Description */}
-              <p className="text-black">{project.description}</p>
+              <p className="text-white/80 leading-relaxed">
+                {project.description}
+              </p>
 
               {/* Stack */}
-              <ul className="flex gap-4">
+              <ul className="flex flex-wrap gap-3">
                 {project.stack.map((item, index) => (
-                  <li key={index} className="text-xl text-accent">
+                  <li
+                    key={index}
+                    className="px-3 py-1 bg-accent/10 text-accent rounded-md text-sm"
+                  >
                     {item.name}
-                    {index !== project.stack.length - 1 && ","}
                   </li>
                 ))}
               </ul>
 
               {/* Border */}
-              <div className="border border-white/20"></div>
+              <div className="border-b border-white/20 my-4"></div>
 
               {/* Buttons */}
               <div className="flex items-center gap-4">
-                {/* Live Project */}
-                <Link href={project.live}>
+                {project.live && (
+                  <Link href={project.live} target="_blank">
                     <Tooltip content="Live Project" position="top">
-                        <div className="w-[70px] h-[70px] rounded-full bg-white flex justify-center items-center group">
-                            <BsArrowUpRight className="text-black text-3xl group-hover:text-accent" />
-                        </div>
+                      <div className="w-[65px] h-[65px] rounded-full bg-accent flex justify-center items-center group transition hover:bg-accent/90">
+                        <BsArrowUpRight className="text-white text-2xl" />
+                      </div>
                     </Tooltip>
-                </Link>
-
-                {/* GitHub */}
-                <Link href={project.github}>
-                    <Tooltip content="Github Repository" position="bottom">
-                        <div className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                            <BsGithub className="text-black text-3xl group-hover:text-accent" />
-                        </div>
+                  </Link>
+                )}
+                {project.github && (
+                  <Link href={project.github} target="_blank">
+                    <Tooltip content="GitHub Repo" position="bottom">
+                      <div className="w-[65px] h-[65px] rounded-full bg-white/10 flex justify-center items-center group transition hover:bg-white/20">
+                        <BsGithub className="text-white text-2xl" />
+                      </div>
                     </Tooltip>
-                </Link>
+                  </Link>
+                )}
               </div>
             </div>
           </div>
@@ -131,17 +167,20 @@ export default function Work() {
             >
               {projects.map((item, index) => (
                 <SwiperSlide key={index} className="w-full">
-                  <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                  <div className="h-[480px] relative group flex justify-center items-center bg-black/20 rounded-xl overflow-hidden shadow-lg">
                     {/* Overlay */}
-                    <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+                    <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-black/40 transition"></div>
                     {/* Image */}
                     <div className="relative w-full h-full">
                       <Image
                         src={item.image}
+                        alt={`${item.title} preview`}
                         fill
-                        className="object-cover"
-                        alt="project image"
+                        priority={index === 0} // loads first slide faster
+                        className="object-cover object-top"
+                        sizes="(max-width: 768px) 100vw, 50vw"
                       />
+
                     </div>
                   </div>
                 </SwiperSlide>
@@ -150,7 +189,7 @@ export default function Work() {
               {/* Slider Buttons */}
               <WorkSlidersBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+                btnStyles="bg-accent hover:bg-accent-hover text-white text-[20px] w-[44px] h-[44px] flex justify-center items-center rounded-full transition-all"
               />
             </Swiper>
           </div>
