@@ -81,7 +81,7 @@ export default function Header() {
                 onClick={() => setOpen((s) => !s)}
                 aria-expanded={open}
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="md:hidden relative flex items-center justify-center w-12 h-12 rounded-md text-black"
+                className="md:hidden relative flex items-center justify-center w-12 h-12 rounded-md text-black cursor-pointer"
               >
                 {/* Animated Hamburger → X */}
                 <motion.span

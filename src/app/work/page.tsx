@@ -29,7 +29,7 @@ const projects = [
     ],
     image: "/projects/hamtec.png",
     live: "https://hamtecproject.com",
-    github: "https://github.com/Babajide789/Hamtec-Projectt",
+    github: "https://github.com/Babajide789/Hamtec-Project",
   },
   {
     num: "02",
@@ -138,8 +138,10 @@ export default function Work() {
                 {project.live && (
                   <Link href={project.live} target="_blank">
                     <Tooltip content="Live Project" position="top">
-                      <div className="w-[65px] h-[65px] rounded-full bg-accent flex justify-center items-center group transition hover:bg-accent/90">
-                        <BsArrowUpRight className="text-white text-2xl" />
+                      <div className="w-[55px] h-[55px] rounded-full bg-accent flex justify-center items-center group hover:bg-accent/90 hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
+                    hover:scale-105 duration-300 transition-all
+                   hover:text-black">
+                        <BsArrowUpRight className="text-black text-2xl" />
                       </div>
                     </Tooltip>
                   </Link>
@@ -147,7 +149,11 @@ export default function Work() {
                 {project.github && (
                   <Link href={project.github} target="_blank">
                     <Tooltip content="GitHub Repo" position="bottom">
-                      <div className="w-[65px] h-[65px] rounded-full bg-white/10 flex justify-center items-center group transition hover:bg-white/20">
+                      <div className="w-[55px] h-[55px] rounded-full bg-white/10 flex justify-center items-center group  hover:bg-white/20 
+                      
+                       hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
+                    hover:scale-105 duration-300 transition-all
+                   hover:text-black">
                         <BsGithub className="text-white text-2xl" />
                       </div>
                     </Tooltip>
@@ -196,8 +202,12 @@ export default function Work() {
 
               {/* Slider Buttons */}
               <WorkSlidersBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent hover:bg-accent-hover text-white text-[20px] w-[44px] h-[44px] flex justify-center items-center rounded-full transition-all"
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none py-2"
+                btnStyles="bg-accent hover:bg-accent-hover text-black text-[20px] w-[44px] h-[44px] flex justify-center items-center rounded-full transition-all
+                  hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
+                  hover:scale-105 duration-300 transition-all
+                  hover:bg-accent hover:text-black
+                "
               />
             </Swiper>
           </div>
