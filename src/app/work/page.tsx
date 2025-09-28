@@ -96,7 +96,7 @@ export default function Work() {
         opacity: 1,
         transition: { delay: 0.4, duration: 0.6, ease: "easeInOut" },
       }}
-      className="min-h-[90vh] flex flex-col justify-center py-12 xl:px-0 bg-[#1a1a1d] text-white"
+      className="min-h-[90vh] flex flex-col justify-center py-12 xl:px-0 bg-[#1a1a1d] text-white pl-8"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-[40px]">

@@ -62,14 +62,17 @@ export default function Services() {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex flex-col justify-between gap-6 p-8 rounded-2xl shadow-md bg-card hover:shadow-xl transition-all duration-500 group border"
+              className="flex flex-col justify-between gap-6 p-8 rounded-2xl shadow-md bg-card hover:shadow-xl transition-all duration-500 border border-white/10 hover:border-accent/60"
             >
               {/* TOP */}
               <div className="w-full flex justify-between items-center">
                 <div className="text-5xl font-extrabold">{service.num}</div>
                 <Link
                   href={service.href}
-                  className="w-14 h-14 rounded-full bg-accent/10 flex justify-center items-center transition-all duration-500 group-hover:bg-accent hover:-rotate-45"
+                  className="w-10 h-10 border border-accent rounded-full flex justify-center items-center 
+                    text-accent text-lg bg-accent/10 hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
+                    hover:scale-105 duration-300 transition-all
+                    hover:bg-accent hover:text-black hover:-rotate-45"
                 >
                   <BsArrowDownRight className="text-xl" />
                 </Link>
@@ -81,12 +84,12 @@ export default function Services() {
               </h2>
 
               {/* DESCRIPTION */}
-              <p className="leading-relaxed group-hover:text-foreground transition-colors duration-500">
+              <p className="leading-relaxed text-white/80">
                 {service.description}
               </p>
 
               {/* BORDER LINE */}
-              <div className="border-t mt-4"></div>
+              <div className="border-t mt-4 border-white/10"></div>
             </div>
           ))}
         </motion.div>
