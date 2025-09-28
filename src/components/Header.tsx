@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import * as Dialog from "@radix-ui/react-dialog";
-import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
   { name: "Home", path: "/" },
@@ -18,7 +18,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // lock body scroll when menu is open
+  // lock scroll on open
   useEffect(() => {
     if (typeof window === "undefined") return;
     document.body.style.overflow = open ? "hidden" : "";
@@ -76,85 +76,146 @@ export default function Header() {
         {/* MOBILE NAV */}
         <div className="xl:hidden">
           <Dialog.Root open={open} onOpenChange={setOpen}>
-            {/* Trigger: we keep Trigger asChild but also handle setOpen for immediate control */}
             <Dialog.Trigger asChild>
               <button
                 onClick={() => setOpen((s) => !s)}
                 aria-expanded={open}
                 aria-label={open ? "Close menu" : "Open menu"}
-                className="md:hidden relative flex items-center justify-center w-12 h-12 rounded-md text-black hover:text-black transition-colors duration-300"
+                className="md:hidden relative flex items-center justify-center w-12 h-12 rounded-md text-black"
               >
-                {/* two stacked icons — we fade/scale them to create a smooth transition */}
-                <span
-                  className={`absolute inset-0 flex items-center justify-center transition-all duration-250 ${
-                    open ? "opacity-0 scale-90" : "opacity-100 scale-100"
-                  }`}
+                {/* Animated Hamburger → X */}
+                <motion.span
+                  initial={false}
+                  animate={open ? "open" : "closed"}
+                  className="flex flex-col justify-between w-6 h-5"
                 >
-                  <Menu className="w-6 h-6" />
-                </span>
-
-                <span
-                  className={`absolute inset-0 flex items-center justify-center transition-all duration-250 ${
-                    open ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-90 -rotate-90"
-                  }`}
-                >
-                  <X className="w-6 h-6" />
-                </span>
+                  <motion.span
+                    variants={{
+                      closed: { rotate: 0, y: 0 },
+                      open: { rotate: 45, y: 8 },
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="block h-[2px] w-full bg-current rounded"
+                  />
+                  <motion.span
+                    variants={{
+                      closed: { opacity: 1 },
+                      open: { opacity: 0 },
+                    }}
+                    transition={{ duration: 0.2 }}
+                    className="block h-[2px] w-full bg-current rounded"
+                  />
+                  <motion.span
+                    variants={{
+                      closed: { rotate: 0, y: 0 },
+                      open: { rotate: -45, y: -8 },
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="block h-[2px] w-full bg-current rounded"
+                  />
+                </motion.span>
               </button>
             </Dialog.Trigger>
 
             <Dialog.Portal>
               {/* Overlay */}
-              <Dialog.Overlay
-                className="fixed inset-0 bg-black/40 backdrop-blur-sm"
-                onClick={() => setOpen(false)}
-              />
+              <AnimatePresence>
+                {open && (
+                  <Dialog.Overlay asChild>
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="fixed inset-0 bg-black/40 backdrop-blur-sm"
+                      onClick={() => setOpen(false)}
+                    />
+                  </Dialog.Overlay>
+                )}
+              </AnimatePresence>
 
-              {/* Content: add the 'dialog-mobile' classname so CSS can target children for animations */}
-              <Dialog.Content
-                className="dialog-mobile fixed top-0 right-0 h-full w-64 bg-background border-l border-border 
-                           p-6 shadow-lg flex flex-col gap-6
-                           data-[state=open]:animate-slideIn data-[state=closed]:animate-slideOut"
-              >
-                {/* Logo */}
-                <div className="text-lg font-bold text-primary">
-                  Babajide <span className="text-accent">.</span>
-                </div>
-
-                {/* Nav Links — each link gets an inline animationDelay to create the stagger */}
-                <nav className="flex flex-col gap-4">
-                  {links.map((link, index) => {
-                    const isActive =
-                      link.path === "/" ? pathname === "/" : pathname.startsWith(link.path);
-
-                    return (
-                      <Link
-                        key={link.path}
-                        href={link.path}
-                        onClick={() => setOpen(false)}
-                        className={`capitalize text-base font-medium transition-colors mobile-nav-link
-                          ${isActive ? "text-primary font-semibold" : "text-muted-foreground hover:text-foreground"}
-                        `}
-                        style={{ animationDelay: `${index * 80 + 120}ms` }}
-                      >
-                        {link.name}
-                      </Link>
-                    );
-                  })}
-
-                  {/* Mobile CTA (also part of the stagger) */}
-                  <Link href="/contact" onClick={() => setOpen(false)}>
-                    <button
-                      className="mt-4 w-full px-6 py-2 rounded-full font-medium
-                                 bg-primary text-primary-foreground
-                                 shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105"
-                      style={{ animationDelay: `${links.length * 80 + 200}ms` }}
+              {/* Panel */}
+              <AnimatePresence>
+                {open && (
+                  <Dialog.Content asChild forceMount>
+                    <motion.div
+                      initial={{ x: "100%" }}
+                      animate={{ x: 0 }}
+                      exit={{ x: "100%" }}
+                      transition={{ type: "spring", stiffness: 280, damping: 30 }}
+                      className="fixed top-0 right-0 h-full w-64 bg-background border-l border-border p-6 shadow-lg flex flex-col gap-6"
                     >
-                      Hire Me
-                    </button>
-                  </Link>
-                </nav>
-              </Dialog.Content>
+                      {/* Logo */}
+                      <div className="text-lg font-bold text-primary">
+                        Babajide <span className="text-accent">.</span>
+                      </div>
+
+                      {/* Links with stagger */}
+                      <motion.nav
+                        initial="hidden"
+                        animate="show"
+                        exit="hidden"
+                        variants={{
+                          hidden: {},
+                          show: {
+                            transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+                          },
+                        }}
+                        className="flex flex-col gap-4"
+                      >
+                        {links.map((link) => {
+                          const isActive =
+                            link.path === "/"
+                              ? pathname === "/"
+                              : pathname.startsWith(link.path);
+
+                          return (
+                            <motion.div
+                              key={link.path}
+                              variants={{
+                                hidden: { opacity: 0, x: 20 },
+                                show: { opacity: 1, x: 0 },
+                              }}
+                            >
+                              <Link
+                                href={link.path}
+                                onClick={() => setOpen(false)}
+                                className={`capitalize text-base font-medium transition-colors
+                                  ${
+                                    isActive
+                                      ? "text-primary font-semibold"
+                                      : "text-muted-foreground hover:text-foreground"
+                                  }
+                                `}
+                              >
+                                {link.name}
+                              </Link>
+                            </motion.div>
+                          );
+                        })}
+
+                        {/* CTA */}
+                        <motion.div
+                          variants={{
+                            hidden: { opacity: 0, x: 20 },
+                            show: { opacity: 1, x: 0 },
+                          }}
+                        >
+                          <Link href="/contact" onClick={() => setOpen(false)}>
+                            <button
+                              className="mt-4 w-full px-6 py-2 rounded-full font-medium
+                                         bg-primary text-primary-foreground
+                                         shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105"
+                            >
+                              Hire Me
+                            </button>
+                          </Link>
+                        </motion.div>
+                      </motion.nav>
+                    </motion.div>
+                  </Dialog.Content>
+                )}
+              </AnimatePresence>
             </Dialog.Portal>
           </Dialog.Root>
         </div>
