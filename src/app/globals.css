@@ -69,3 +69,45 @@
       Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
   }
 }
+
+/* header / mobile drawer animations */
+@keyframes slideInFromRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+@keyframes slideOutToRight {
+  from { transform: translateX(0); opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* apply the sliding animation on the Content itself via Radix data-state attribute */
+.dialog-mobile[data-state="open"] {
+  animation: slideInFromRight 280ms cubic-bezier(.22,.9,.26,1) forwards;
+}
+.dialog-mobile[data-state="closed"] {
+  animation: slideOutToRight 220ms cubic-bezier(.22,.9,.26,1) forwards;
+}
+
+/* mobile nav items start hidden and animate when the drawer is open */
+.dialog-mobile .mobile-nav-link {
+  opacity: 0;
+  transform: translateX(12px);
+  display: block;
+  /* will be animated using fadeSlideIn when the parent content is shown; we rely on inline animationDelay */
+  animation-name: fadeSlideIn;
+  animation-duration: 360ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.22,.9,.26,1);
+}
+
+/* overlay fade */
+@keyframes overlayFadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes overlayFadeOut { from { opacity: 1 } to { opacity: 0 } }
+[data-state="open"] + .radix-overlay, /* not used here, left if you want custom selectors */ {}
+/* (Radix Overlay is rendered as sibling of Content in Portal; we've simply added a base fade via class) */
+
