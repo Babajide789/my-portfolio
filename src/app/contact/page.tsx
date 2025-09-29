@@ -30,7 +30,7 @@ export default function Contact() {
         y: 0,
         transition: { delay: 0.3, duration: 0.6, ease: "easeInOut" },
       }}
-      className="py-16 px-6 md:px-12"
+      className="py-16 px-6 md:px-12 bg-[#1e1e22]"
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col xl:flex-row gap-12">
@@ -85,7 +85,7 @@ export default function Contact() {
               {/* BUTTON */}
               <button
                 type="submit"
-                className="w-44 py-3 rounded-lg bg-accent text-white font-semibold shadow-md hover:bg-accent/90 transition-colors"
+                className="w-44 py-3 rounded-lg bg-accent text-black font-semibold shadow-md hover:bg-accent/90 transition-colors"
               >
                 Send Message
               </button>
@@ -98,11 +98,12 @@ export default function Contact() {
               {info.map((item, index) => (
                 <li
                   key={index}
-                  className="flex items-center gap-6 p-4 bg-neutral-900 rounded-xl border border-neutral-800 hover:border-accent transition-colors"
+                  className="flex items-center gap-6 p-3 bg-neutral-900 rounded-xl border border-neutral-800 hover:border-accent transition-colors"
                 >
                   <div className="w-14 h-14 xl:w-16 xl:h-16 bg-neutral-800 text-accent rounded-lg flex items-center justify-center">
                     <div className="text-2xl">{item.icon}</div>
                   </div>
+                  
                   <div>
                     <p className="text-neutral-400">{item.title}</p>
                     <h3 className="text-lg md:text-xl font-medium text-white">
