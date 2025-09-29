@@ -79,7 +79,7 @@ export default function Services() {
               className="p-8 rounded-2xl shadow-lg hover:shadow-2xl transition bg-gray-50"
             >
               <div className="flex items-center mb-6">
-                <service.icon className="w-10 h-10 text-indigo-600 mr-4" />
+                <service.icon className="w-10 h-10 text-black-600 mr-4" />
                 <span className="text-3xl font-bold text-white-300">
                   {service.number}
                 </span>
