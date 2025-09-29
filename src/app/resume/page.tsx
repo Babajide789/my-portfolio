@@ -87,20 +87,20 @@ export default function Resume() {
       <div className="w-full max-w-6xl mx-auto flex flex-col xl:flex-row gap-10">
         {/* Tabs Menu */}
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 xl:flex xl:flex-col xl:w-1/4 justify-center">
-  {["experience", "education", "skills", "about"].map((tab) => (
-    <button
-      key={tab}
-      onClick={() => setActiveTab(tab)}
-      className={`px-4 py-3 rounded-xl font-semibold capitalize transition-all duration-300 text-sm sm:text-base
-        ${activeTab === tab
-          ? "bg-black text-white shadow-md scale-105"
-          : "bg-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-700"
-        }`}
-    >
-      {tab}
-    </button>
-  ))}
-</div>
+          {["experience", "education", "skills", "about"].map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-4 py-3 rounded-xl font-semibold capitalize transition-all duration-300 text-sm sm:text-base
+                ${activeTab === tab
+                  ? "bg-black text-white shadow-md scale-105"
+                  : "bg-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-700"
+                }`}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
 
         {/* Tab Content */}
         <div className="flex-1 min-h-[70vh]">

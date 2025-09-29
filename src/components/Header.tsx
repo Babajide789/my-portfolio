@@ -77,44 +77,47 @@ export default function Header() {
         <div className="xl:hidden">
           <Dialog.Root open={open} onOpenChange={setOpen}>
             <Dialog.Trigger asChild>
-              <button
-                onClick={() => setOpen((s) => !s)}
-                aria-expanded={open}
-                aria-label={open ? "Close menu" : "Open menu"}
-                className="md:hidden relative flex items-center justify-center w-12 h-12 rounded-md text-black cursor-pointer"
-              >
-                {/* Animated Hamburger → X */}
-                <motion.span
-                  initial={false}
-                  animate={open ? "open" : "closed"}
-                  className="flex flex-col justify-between w-6 h-5"
+                <button
+                    onClick={() => setOpen((s) => !s)}
+                    aria-expanded={open}
+                    aria-label={open ? "Close menu" : "Open menu"}
+                    className="md:hidden relative flex items-center justify-center w-12 h-12 rounded-md text-black cursor-pointer"
                 >
-                  <motion.span
-                    variants={{
-                      closed: { rotate: 0, y: 0 },
-                      open: { rotate: 45, y: 8 },
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="block h-[2px] w-full bg-current rounded"
-                  />
-                  <motion.span
-                    variants={{
-                      closed: { opacity: 1 },
-                      open: { opacity: 0 },
-                    }}
-                    transition={{ duration: 0.2 }}
-                    className="block h-[2px] w-full bg-current rounded"
-                  />
-                  <motion.span
-                    variants={{
-                      closed: { rotate: 0, y: 0 },
-                      open: { rotate: -45, y: -8 },
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="block h-[2px] w-full bg-current rounded"
-                  />
-                </motion.span>
-              </button>
+                    {/* Animated Hamburger → X */}
+                    <motion.span
+                    initial={false}
+                    animate={open ? "open" : "closed"}
+                    className="flex flex-col justify-between w-6 h-5 relative"
+                    >
+                    {/* Top line */}
+                    <motion.span
+                        variants={{
+                        closed: { rotate: 0, y: 0 },
+                        open: { rotate: 45, y: 7 }, // shift down so it crosses center
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute top-0 left-0 h-[2px] w-full bg-current rounded"
+                    />
+                    {/* Middle line */}
+                    <motion.span
+                        variants={{
+                        closed: { opacity: 1 },
+                        open: { opacity: 0 },
+                        }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-1/2 left-0 -translate-y-1/2 h-[2px] w-full bg-current rounded"
+                    />
+                    {/* Bottom line */}
+                    <motion.span
+                        variants={{
+                        closed: { rotate: 0, y: 0 },
+                        open: { rotate: -45, y: -10 }, // shift up so it crosses center
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute bottom-0 left-0 h-[2px] w-full bg-current rounded"
+                    />
+                    </motion.span>
+                </button>
             </Dialog.Trigger>
 
             <Dialog.Portal>
