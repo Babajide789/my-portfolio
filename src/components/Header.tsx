@@ -205,7 +205,7 @@ export default function Header() {
                             <button
                               className="mt-4 w-full px-6 py-2 rounded-full font-medium
                                          bg-primary text-primary-foreground
-                                         shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105"
+                                         shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105 cursor-pointer"
                             >
                               Hire Me
                             </button>

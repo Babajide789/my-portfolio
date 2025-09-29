@@ -1,98 +1,98 @@
 "use client";
 
-import { BsArrowDownRight } from "react-icons/bs";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { 
+  Code, 
+  Monitor,
+  Layout, 
+  Users 
+} from "lucide-react";
 
 const services = [
   {
-    num: "01",
+    number: "01",
     title: "Web Development",
     description:
-      "I build modern, fast, and responsive websites tailored to user needs.",
-    href: "/services/web-development",
+      "I build modern, fast, and responsive web applications using cutting-edge technologies like React.js, Next.js, and Tailwind CSS. My focus is on clean code, smooth performance, and scalable architecture that grows with your business.",
+    icon: Code,
   },
   {
-    num: "02",
-    title: "UI/UX",
+    number: "02",
+    title: "Frontend Engineering",
     description:
-      "I design intuitive user interfaces and experiences that feel natural.",
-    href: "/services/ui-ux",
+      "I specialize in translating designs into functional, pixel-perfect code. With expertise in React, TypeScript, and responsive design, I deliver interfaces that are not only visually stunning but also accessible and highly interactive.",
+    icon: Monitor,
   },
   {
-    num: "03",
-    title: "Logo Design",
+    number: "03",
+    title: "Prototyping & Product Design",
     description:
-      "I create clean and memorable logos that represent your brand identity.",
-    href: "/services/logo-design",
+      "From ideas to clickable prototypes, I help visualize products before they’re built. Using tools like Figma, I design and test user flows, making sure your product vision translates into an experience users love.",
+    icon: Layout,
   },
   {
-    num: "04",
-    title: "SEO",
+    number: "04",
+    title: "Consulting & Collaboration",
     description:
-      "I optimize websites for search engines to improve visibility and ranking.",
-    href: "/services/seo",
+      "Whether you’re a startup looking to establish an online presence or a team in need of design-dev collaboration, I provide tailored solutions, technical insight, and creative support to help you move faster.",
+    icon: Users,
   },
 ];
 
 export default function Services() {
   return (
-    <section className="relative min-h-[88vh] flex flex-col justify-center py-20 bg-[#1e1e22]">
-      <div className="container mx-auto px-6 md:px-12">
-        {/* Section Heading */}
+    <section className="py-20 px-6 md:px-12 lg:px-20 text-gray-900 bg-[#1e1e22]">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <h1 className="text-3xl md:text-4xl font-bold text-secondary">
-            My <span className="text-secondary">Services</span>
-          </h1>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl md:text-5xl font-bold text-white"
+          >
+            My <span className="text-accent">Services</span>
+          </motion.h2>
+
+          {/* Accent underline */}
           <div className="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
-          <p className="mt-4 max-w-2xl mx-auto leading-relaxed text-white/70">
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-6 mx-auto max-w-2xl text-center leading-relaxed text-white/70 text-lg"
+          >
             Here are the main areas where I can help bring your ideas to life.
-          </p>
+          </motion.p>
         </div>
 
-        {/* Services Grid */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
-            transition: { delay: 0.3, duration: 0.6, ease: "easeInOut" },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 text-white"
-        >
+
+
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className="flex flex-col justify-between gap-6 p-8 rounded-2xl shadow-md bg-card hover:shadow-xl transition-all duration-500 border border-white/10 hover:border-accent/60"
+            <motion.div
+              key={service.number}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className="p-8 rounded-2xl shadow-lg hover:shadow-2xl transition bg-gray-50"
             >
-              {/* TOP */}
-              <div className="w-full flex justify-between items-center">
-                <div className="text-5xl font-extrabold">{service.num}</div>
-                <Link
-                  href={service.href}
-                  className="w-10 h-10 border border-accent rounded-full flex justify-center items-center 
-                    text-accent text-lg bg-accent/10 hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
-                    hover:scale-105 duration-300 transition-all
-                    hover:bg-accent hover:text-black hover:-rotate-45"
-                >
-                  <BsArrowDownRight className="text-xl" />
-                </Link>
+              <div className="flex items-center mb-6">
+                <service.icon className="w-10 h-10 text-indigo-600 mr-4" />
+                <span className="text-3xl font-bold text-white-300">
+                  {service.number}
+                </span>
               </div>
-
-              {/* HEADING */}
-              <h2 className="text-xl md:text-2xl font-bold">
+              <h3 className="text-xl font-semibold mb-4">
                 {service.title}
-              </h2>
-
-              {/* DESCRIPTION */}
-              <p className="leading-relaxed text-white/80">
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
                 {service.description}
               </p>
-
-              {/* BORDER LINE */}
-              <div className="border-t mt-4 border-white/10"></div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
