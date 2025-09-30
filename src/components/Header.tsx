@@ -63,11 +63,11 @@ export default function Header() {
           <Link href="/contact">
             <button
               className="px-6 py-2 rounded-full font-medium
-                         bg-primary text-primary-foreground
-                         shadow-md transition-all duration-300
-                         hover:bg-primary/90 hover:shadow-lg hover:scale-105
-                         focus:outline-none focus:ring-2 focus:ring-primary/50"
-            >
+                bg-primary text-primary-foreground
+                shadow-md transition-all duration-300
+                hover:bg-primary/90 hover:shadow-lg hover:scale-105
+                focus:outline-none focus:ring-2 focus:ring-primary/50"
+              >
               Hire Me
             </button>
           </Link>
@@ -158,7 +158,7 @@ export default function Header() {
                                 variants={{
                                 hidden: {},
                                 show: {
-                                    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+                                  transition: { staggerChildren: 0.08, delayChildren: 0.1 },
                                 },
                                 }}
                                 className="flex flex-col gap-4"
@@ -170,7 +170,7 @@ export default function Header() {
                                     : pathname.startsWith(link.path);
 
                                 return (
-                                    <motion.div
+                                  <motion.div
                                     key={link.path}
                                     variants={{
                                         hidden: { opacity: 0, x: 20 },
@@ -185,27 +185,27 @@ export default function Header() {
                                             isActive
                                             ? "text-primary font-semibold"
                                             : "text-muted-foreground hover:text-foreground"
-                                        }
+                                          }
                                         `}
                                     >
                                         {link.name}
                                     </Link>
-                                    </motion.div>
+                                  </motion.div>
                                 );
                                 })}
 
                                 {/* CTA */}
                                 <motion.div
                                 variants={{
-                                    hidden: { opacity: 0, x: 20 },
-                                    show: { opacity: 1, x: 0 },
+                                  hidden: { opacity: 0, x: 20 },
+                                  show: { opacity: 1, x: 0 },
                                 }}
                                 >
                                 <Link href="/contact" onClick={() => setOpen(false)}>
                                     <button
                                     className="mt-4 w-full px-6 py-2 rounded-full font-medium
-                                                bg-primary text-primary-foreground
-                                                shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105 cursor-pointer"
+                                      bg-primary text-primary-foreground
+                                      shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105 cursor-pointer"
                                     >
                                     Hire Me
                                     </button>
