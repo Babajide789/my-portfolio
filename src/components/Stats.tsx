@@ -27,7 +27,7 @@ export default function Stats() {
 function StatItem({ num, text }: { num: number; text: string }) {
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3, // how much of the element must be visible
+    threshold: 0.3,
   })
 
   return (

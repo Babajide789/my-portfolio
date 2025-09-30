@@ -75,23 +75,24 @@ const skills = {
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("experience");
 
-  return (
+   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
         transition: { delay: 0.2, duration: 0.6, ease: "easeInOut" },
       }}
-      className="min-h-[80vh] flex items-center justify-center py-16 px-6 md:px-10 bg-[#1e1e22] text-white"
+      className="min-h-screen flex items-center justify-center py-10 px-4 sm:px-6 md:px-10 bg-[#1e1e22] text-white"
     >
-      <div className="w-full max-w-6xl mx-auto flex flex-col xl:flex-row gap-10">
+      <div className="w-full max-w-6xl h-full mx-auto flex flex-col xl:flex-row gap-8 sm:gap-10">
+        
         {/* Tabs Menu */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 xl:flex xl:flex-col xl:w-1/4 justify-center">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:flex xl:flex-col xl:w-1/4 justify-center">
           {["experience", "education", "skills", "about"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-4 py-3 rounded-xl font-semibold capitalize transition-all duration-300 text-sm sm:text-base
+              className={`px-3 py-2 sm:px-4 sm:py-3 rounded-xl font-semibold capitalize transition-all duration-300 text-xs sm:text-sm md:text-base
                 ${activeTab === tab
                   ? "bg-black text-white shadow-md scale-105"
                   : "bg-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-700"
@@ -103,28 +104,31 @@ export default function Resume() {
         </div>
 
         {/* Tab Content */}
-        <div className="flex-1 min-h-[70vh]">
+        <div className="flex-1 min-h-[70vh] space-y-6">
           {/* EXPERIENCE */}
           {activeTab === "experience" && (
             <div>
-              <h3 className="text-3xl font-bold mb-4">
-                {experience.title}{" "}
-                <span className="text-accent">🚀</span>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+                {experience.title} <span className="text-accent">🚀</span>
               </h3>
-              <p className="text-neutral-400 mb-6">{experience.description}</p>
-              <div className="grid gap-6 md:grid-cols-2">
+              <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                {experience.description}
+              </p>
+              <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
                 {experience.items.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-neutral-800 hover:bg-neutral-700 transition-colors p-6 rounded-xl shadow-md"
+                    className="bg-neutral-800 hover:bg-neutral-700 transition-colors p-4 sm:p-6 rounded-xl shadow-md"
                   >
-                    <span className="text-accent font-semibold">
+                    <span className="text-accent font-semibold text-sm sm:text-base">
                       {item.duration}
                     </span>
-                    <h4 className="text-xl font-semibold mt-2">
+                    <h4 className="text-lg sm:text-xl font-semibold mt-2">
                       {item.position}
                     </h4>
-                    <p className="text-neutral-400 mt-1">{item.company}</p>
+                    <p className="text-neutral-400 mt-1 text-sm sm:text-base">
+                      {item.company}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -134,24 +138,27 @@ export default function Resume() {
           {/* EDUCATION */}
           {activeTab === "education" && (
             <div>
-              <h3 className="text-3xl font-bold mb-4">
-                {education.title}{" "}
-                <span className="text-accent">📚</span>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+                {education.title} <span className="text-accent">📚</span>
               </h3>
-              <p className="text-neutral-400 mb-6">{education.description}</p>
-              <div className="grid gap-6 md:grid-cols-2">
+              <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                {education.description}
+              </p>
+              <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
                 {education.items.map((item, index) => (
                   <div
                     key={index}
-                    className="bg-neutral-800 hover:bg-neutral-700 transition-colors p-6 rounded-xl shadow-md"
+                    className="bg-neutral-800 hover:bg-neutral-700 transition-colors p-4 sm:p-6 rounded-xl shadow-md"
                   >
-                    <span className="text-accent font-semibold">
+                    <span className="text-accent font-semibold text-sm sm:text-base">
                       {item.duration}
                     </span>
-                    <h4 className="text-xl font-semibold mt-2">
+                    <h4 className="text-lg sm:text-xl font-semibold mt-2">
                       {item.degree}
                     </h4>
-                    <p className="text-neutral-400 mt-1">{item.institution}</p>
+                    <p className="text-neutral-400 mt-1 text-sm sm:text-base">
+                      {item.institution}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -161,21 +168,22 @@ export default function Resume() {
           {/* SKILLS */}
           {activeTab === "skills" && (
             <div>
-              <h3 className="text-3xl font-bold mb-4">
-                {skills.title}{" "}
-                <span className="text-accent">⚡</span>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+                {skills.title} <span className="text-accent">⚡</span>
               </h3>
-              <p className="text-neutral-400 mb-6">{skills.description}</p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+              <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                {skills.description}
+              </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
                 {skills.skillList.map((skill, index) => (
                   <div
                     key={index}
-                    className="bg-neutral-800 hover:bg-neutral-700 transition-all duration-300 flex flex-col justify-center items-center p-6 rounded-xl shadow-md group cursor-pointer"
+                    className="bg-neutral-800 hover:bg-neutral-700 transition-all duration-300 flex flex-col justify-center items-center p-4 sm:p-6 rounded-xl shadow-md group cursor-pointer"
                   >
-                    <div className="text-5xl text-neutral-400 group-hover:text-accent transition-colors duration-300">
+                    <div className="text-3xl sm:text-4xl md:text-5xl text-neutral-400 group-hover:text-accent transition-colors duration-300">
                       {skill.icon}
                     </div>
-                    <span className="mt-2 text-neutral-200 group-hover:text-white transition-colors duration-300">
+                    <span className="mt-2 text-xs sm:text-sm md:text-base text-neutral-200 group-hover:text-white transition-colors duration-300">
                       {skill.name}
                     </span>
                   </div>
@@ -186,22 +194,25 @@ export default function Resume() {
 
           {/* ABOUT */}
           {activeTab === "about" && (
-            <div> 
-              <h3 className="text-3xl font-bold mb-4">
-                {about.title}{" "}
-                <span className="text-accent">👤</span>
+            <div>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
+                {about.title} <span className="text-accent">👤</span>
               </h3>
-              <p className="text-neutral-400 mb-6">{about.description}</p>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4">
+              <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
+                {about.description}
+              </p>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                 {about.info.map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-4 bg-neutral-800 hover:bg-neutral-700 transition-colors p-4 rounded-lg"
+                    className="flex items-center gap-3 sm:gap-4 bg-neutral-800 hover:bg-neutral-700 transition-colors p-3 sm:p-4 rounded-lg"
                   >
-                    <span className="text-neutral-400 font-medium">
+                    <span className="text-neutral-400 font-medium text-xs sm:text-sm md:text-base">
                       {item.fieldName}:
                     </span>
-                    <span className="text-white">{item.fieldValue}</span>
+                    <span className="text-white text-sm sm:text-base">
+                      {item.fieldValue}
+                    </span>
                   </li>
                 ))}
               </ul>

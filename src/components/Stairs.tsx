@@ -24,7 +24,7 @@ const reverseIndex = (index: number) => {
 export default function Stairs() {
   return (
     <>
-      {/* RENDER 6 MOTION DIVS EACH REP A STEP OF STAIRS */}
+      {/* RENDER 6 MOTION DIVS */}
       {[...Array(6)].map((_, index) => (
         <motion.div
           key={index}
