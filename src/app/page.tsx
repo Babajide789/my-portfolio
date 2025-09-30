@@ -22,9 +22,9 @@ export default function Home() {
               proficient in various programming languages and technologies.
             </p>
 
-            {/* ACTIONS */}
+            {/* ACTIONS BUTTONS */}
             <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-              {/* Download CV */}
+              {/* DOWNLOAD CV */}
               <button
                 className="uppercase flex items-center gap-2 bg-accent text-primary px-6 py-3 rounded-lg font-semibold 
                 shadow-md hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
@@ -34,7 +34,7 @@ export default function Home() {
                 <FiDownload className="text-xl" />
               </button>
 
-              {/* Socials */}
+              {/* SOCIALS */}
               <div className="mt-6 sm:mt-0">
                 <Socials
                   containerStyles="flex gap-4 sm:gap-6"
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Stats Section */}
+      {/* StATS SECTION */}
       <Stats />
     </section>
   )

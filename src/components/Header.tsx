@@ -18,7 +18,7 @@ export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
-  // lock scroll on open
+  // LOCK SCROLL WHEN MOBILE NAV IS OPEN
   useEffect(() => {
     if (typeof window === "undefined") return;
     document.body.style.overflow = open ? "hidden" : "";
@@ -59,7 +59,7 @@ export default function Header() {
             );
           })}
 
-          {/* Hire Me CTA */}
+          {/* HIRE ME CTA */}
           <Link href="/contact">
             <button
               className="px-6 py-2 rounded-full font-medium
@@ -76,7 +76,7 @@ export default function Header() {
         {/* MOBILE NAV */}
         <div className="xl:hidden">
             <Dialog.Root open={open} onOpenChange={setOpen}>
-                {/* Hamburger / X button */}
+                {/* HAMBURGER, X BUTTON */}
                 <button
                     onClick={() => setOpen((s) => !s)}
                     aria-expanded={open}
@@ -88,7 +88,7 @@ export default function Header() {
                         animate={open ? "open" : "closed"}
                         className="flex flex-col justify-between w-6 h-5 relative"
                     >
-                        {/* Top line */}
+                        {/* TOP LINE */}
                         <motion.span
                         variants={{
                             closed: { rotate: 0, y: 0 },
@@ -97,7 +97,7 @@ export default function Header() {
                         transition={{ duration: 0.3 }}
                         className="absolute top-0 left-0 h-[2px] w-full bg-current rounded"
                         />
-                        {/* Middle line */}
+                        {/* MIDDLE LINE */}
                         <motion.span
                         variants={{
                             closed: { opacity: 1 },
@@ -106,7 +106,7 @@ export default function Header() {
                         transition={{ duration: 0.2 }}
                         className="absolute top-1/2 left-0 -translate-y-1/2 h-[2px] w-full bg-current rounded"
                         />
-                        {/* Bottom line */}
+                        {/* BOTTOM LINE */}
                         <motion.span
                         variants={{
                             closed: { rotate: 0, y: 0 },
@@ -119,7 +119,7 @@ export default function Header() {
                 </button>
 
                 <Dialog.Portal>
-                    {/* Overlay */}
+                    {/* OVERLAY */}
                     <AnimatePresence>
                         {open && (
                             <Dialog.Overlay asChild>
@@ -128,13 +128,13 @@ export default function Header() {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 transition={{ duration: 0.3 }}
-                                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[99]" // ⬅️ add high z-index
+                                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[99]"
                             />
                             </Dialog.Overlay>
                         )}
                     </AnimatePresence>
 
-                    {/* Panel */}
+                    {/* PANEL */}
                     <AnimatePresence>
                         {open && (
                         <Dialog.Content asChild forceMount>
@@ -145,12 +145,12 @@ export default function Header() {
                             transition={{ type: "spring", stiffness: 280, damping: 30 }}
                             className="fixed top-0 right-0 h-full w-64 bg-background border-l border-border p-6 shadow-lg flex flex-col gap-6 z-[100]"
                             >
-                            {/* Logo */}
+                            {/* LOGO */}
                             <div className="text-lg font-bold text-primary">
                                 Babajide <span className="text-accent">.</span>
                             </div>
 
-                            {/* Links with stagger */}
+                            {/* LINKS WITH STAGGER */}
                             <motion.nav
                                 initial="hidden"
                                 animate="show"
@@ -194,7 +194,7 @@ export default function Header() {
                                 );
                                 })}
 
-                                {/* CTA */}
+                                {/* CTA BUTTON */}
                                 <motion.div
                                 variants={{
                                   hidden: { opacity: 0, x: 20 },

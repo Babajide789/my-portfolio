@@ -1,6 +1,6 @@
 "use client"
 
-import { easeIn, easeInOut, motion } from "framer-motion"
+import { easeIn, motion } from "framer-motion"
 import Image from "next/image"
 
 export default function Photo() {
@@ -29,7 +29,7 @@ export default function Photo() {
             fill
             priority
             quality={100}
-            className="object-cover rounded-full" // 🔑 fills the circle perfectly
+            className="object-cover rounded-full"
           />
         </motion.div>
 
