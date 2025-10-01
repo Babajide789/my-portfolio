@@ -90,7 +90,6 @@ export default function Work() {
   }
 
   return (
-  
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
@@ -100,15 +99,15 @@ export default function Work() {
       className="min-h-[90vh] flex flex-col justify-center py-8 sm:py-12 px-4 sm:px-6 md:px-10 bg-[#1a1a1d] text-white"
     >
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row xl:gap-[40px] gap-10">
+        <div className="flex flex-col xl:flex-row xl:gap-[40px] gap-6 sm:gap-8">
           {/* LEFT SIDE */}
           <div className="w-full xl:w-[50%] flex flex-col justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-4 sm:gap-6">
 
               {/* PROJECT NUM */}
-              <div className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold text-transparent text-outline">
+              {/* <div className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold text-transparent text-outline">
                 {project.num}
-              </div>
+              </div> */}
 
               {/* TITLE */}
               <h2 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[42px] font-bold leading-tight capitalize text-accent">

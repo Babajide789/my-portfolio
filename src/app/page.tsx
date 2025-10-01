@@ -4,12 +4,13 @@ import Photo from "@/components/Photo"
 import Socials from "@/components/Socials"
 import Stats from "@/components/Stats"
 import { FiDownload } from "react-icons/fi"
+import Link from "next/link"
 
 export default function Home() {
   return (
     <section className="h-full bg-[#1e1e22] text-white">
       <div className="container mx-auto h-full px-4 sm:px-6 md:px-10">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 gap-10">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 gap-2">
           {/* TEXT */}
           <div className="w-full xl:w-1/2 text-center sm:text-left order-2 xl:order-none flex flex-col items-center sm:items-start">
             <span className="text-accent text-lg">Software Developer</span>
@@ -25,14 +26,21 @@ export default function Home() {
             {/* ACTIONS BUTTONS */}
             <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
               {/* DOWNLOAD CV */}
-              <button
-                className="uppercase flex items-center gap-2 bg-accent text-primary px-6 py-3 rounded-lg font-semibold 
-                shadow-md hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
-                hover:bg-accent/90 hover:scale-105 transition-all duration-300"
+              <Link 
+                href="/Babajide_Yahaya_Frontend_Resume.pdf" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </button>
+                <button
+                  className="uppercase flex items-center gap-2 bg-accent text-primary px-6 py-3 rounded-lg font-semibold 
+                  shadow-md hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] 
+                  hover:bg-accent/90 hover:scale-105 transition-all duration-300 cursor-pointer"
+                >
+                  <FiDownload className="text-xl" />
+                  <span>Resume</span>
+                </button>
+              </Link>
+
 
               {/* SOCIALS */}
               <div className="mt-6 sm:mt-0">

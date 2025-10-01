@@ -8,7 +8,7 @@ type SocialsProps = {
 
 const socials = [
   { icon: <FaGithub />, path: "https://github.com/Babajide789/" },
-  { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/babajide-yahaya-727021240/" },
+  // { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/babajide-yahaya-727021240/" },
   { icon: <FaWhatsapp />, path: "https://wa.link/weyef2/" },
   { icon: <FaTwitter />, path: "https://x.com/ocims_j?s=21/" },
 ]
