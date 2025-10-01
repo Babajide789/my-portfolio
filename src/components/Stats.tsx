@@ -7,7 +7,7 @@ const stats = [
   { num: 5, text: "Years of experience" },
   { num: 25, text: "Projects Completed" },
   { num: 7, text: "Technologies mastered" },
-  { num: 100, text: " Plus Code Commits" },
+  { num: 112, text: " + Code Commits" },
 ]
 
 export default function Stats() {
