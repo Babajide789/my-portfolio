@@ -13,7 +13,7 @@ import Image from "next/image"
 import WorkSlidersBtns from "@/components/WorkSliderBtns"
 import Tooltip from "@/components/Tooltip"
 
-// Portfolio Projects
+// PROJECTS
 const projects = [
   {
     num: "01",
@@ -101,25 +101,26 @@ export default function Work() {
     >
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row xl:gap-[40px] gap-10">
-          {/* Left Side */}
+          {/* LEFT SIDE */}
           <div className="w-full xl:w-[50%] flex flex-col justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-4 sm:gap-6">
-              {/* Project Number */}
+
+              {/* PROJECT NUM */}
               <div className="text-5xl sm:text-6xl md:text-7xl xl:text-8xl font-extrabold text-transparent text-outline">
                 {project.num}
               </div>
 
-              {/* Title */}
+              {/* TITLE */}
               <h2 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[42px] font-bold leading-tight capitalize text-accent">
                 {project.title}
               </h2>
 
-              {/* Description */}
+              {/* DESCRIPTION */}
               <p className="text-white/80 leading-relaxed text-sm sm:text-base">
                 {project.description}
               </p>
 
-              {/* Stack */}
+              {/* STACK */}
               <ul className="flex flex-wrap gap-2 sm:gap-3">
                 {project.stack.map((item, index) => (
                   <li
@@ -131,10 +132,10 @@ export default function Work() {
                 ))}
               </ul>
 
-              {/* Divider */}
+              {/* DIVIDER */}
               <div className="border-b border-white/20 my-3 sm:my-4"></div>
 
-              {/* Buttons */}
+              {/* BUTTONS */}
               <div className="flex justify-start items-center gap-4">
                 {project.live && (
                   <Link href={project.live} target="_blank">
@@ -159,7 +160,7 @@ export default function Work() {
             </div>
           </div>
 
-          {/* Right Side - Slider */}
+          {/* RIGHT SIDE - SLIDER */}
           <div className="w-full xl:w-[50%]">
             <Swiper
               spaceBetween={20}
@@ -170,17 +171,17 @@ export default function Work() {
               {projects.map((item, index) => (
                 <SwiperSlide key={index} className="w-full">
                   <div className="h-full relative group flex justify-center items-center bg-black/20 rounded-xl overflow-hidden shadow-lg border border-white/10">
-                    {/* Fake browser bar */}
+                    {/* FAKE BROWSER */}
                     <div className="absolute top-0 left-0 right-0 h-6 sm:h-8 bg-[#2a2a2d] flex items-center gap-2 px-3 z-20">
                       <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-red-500"></span>
                       <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-yellow-500"></span>
                       <span className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-green-500"></span>
                     </div>
 
-                    {/* Overlay */}
+                    {/* OVERLAY */}
                     <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-black/40 transition"></div>
 
-                    {/* Image */}
+                    {/* IMAGE */}
                     <div className="relative w-full h-full pt-6 sm:pt-8">
                       <Image
                         src={item.image}
@@ -195,7 +196,7 @@ export default function Work() {
                 </SwiperSlide>
               ))}
 
-              {/* Slider Buttons */}
+              {/* SLIDER BUTTONS */}
               <WorkSlidersBtns
                 containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none py-3 sm:py-5"
                 btnStyles="bg-accent hover:bg-accent-hover text-black text-lg sm:text-[20px] w-[38px] h-[38px] sm:w-[44px] sm:h-[44px] flex justify-center items-center rounded-full transition-all hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] hover:scale-105 hover:text-black"

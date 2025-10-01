@@ -53,7 +53,7 @@ export default function Services() {
             My <span className="text-accent">Services</span>
           </motion.h2>
 
-          {/* Accent underline */}
+          {/* ACCENT UNDERLINE */}
           <div className="w-16 h-1 bg-accent mx-auto mt-4 rounded-full"></div>
 
           <motion.p
@@ -65,9 +65,6 @@ export default function Services() {
             Here are the main areas where I can help bring your ideas to life.
           </motion.p>
         </div>
-
-
-
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
           {services.map((service, index) => (
@@ -84,6 +81,7 @@ export default function Services() {
                   {service.number}
                 </span>
               </div>
+              
               <h3 className="text-xl font-semibold mb-4">
                 {service.title}
               </h3>

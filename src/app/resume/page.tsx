@@ -103,7 +103,7 @@ export default function Resume() {
           ))}
         </div>
 
-        {/* Tab Content */}
+        {/* TAB CONTENT */}
         <div className="flex-1 min-h-[70vh] space-y-6">
           {/* EXPERIENCE */}
           {activeTab === "experience" && (
