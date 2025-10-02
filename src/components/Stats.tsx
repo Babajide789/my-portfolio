@@ -4,7 +4,7 @@ import CountUp from "react-countup"
 import { useInView } from "react-intersection-observer"
 
 const stats = [
-  { num: 5, text: "Years of experience" },
+  { num: 4, text: "Years of experience" },
   { num: 25, text: "Projects Completed" },
   { num: 7, text: "Technologies mastered" },
   { num: 120, text: " + Code Commits" },

@@ -9,9 +9,9 @@ const about = {
   title: "About Me",
   description: "I work for growth and inspiration.",
   info: [
-    { fieldName: "Name", fieldValue: "Babajide Yahaya" },
+    { fieldName: "Name", fieldValue: "Babajide Mohammed Yahaya" },
     { fieldName: "Phone", fieldValue: "(+234) 703 016 8883" },
-    { fieldName: "Experience", fieldValue: "5+ Years" },
+    { fieldName: "Experience", fieldValue: "4+ Years" },
     { fieldName: "Nationality", fieldValue: "Nigerian" },
     { fieldName: "Email", fieldValue: "yahayababajide@gmail.com" },
     { fieldName: "Freelance", fieldValue: "Available" },
@@ -26,12 +26,12 @@ const experience = {
     {
       company: "OCIMS Tech Solution",
       position: "Frontend Developer",
-      duration: "2022 - Present",
+      duration: "2024 - Present",
     },
     {
       company: "Hamtec Project",
       position: "Frontend Developer Intern",
-      duration: "2021",
+      duration: "2023 - 2024",
     },
   ],
 };
@@ -41,19 +41,24 @@ const education = {
   description: "Always studying and improving.",
   items: [
     {
+      institution: "NASFAT Activate Training Program in Tech",
+      degree: "Frontend Developer",
+      duration: "2024",
+    },
+    {
+      institution: "UDEMY by Skillhub Academy",
+      degree: "JavaScript Course",
+      duration: "2024",
+    },
+    {
       institution: "Federal University of Technology, Akure",
       degree: "Quantity Surveying",
       duration: "2023",
     },
     {
       institution: "W3Schools",
-      degree: "Frontend Web Developer",
+      degree: "Frontend Beginners Training",
       duration: "2022",
-    },
-    {
-      institution: "NASFAT Activate 1.0",
-      degree: "Frontend Developer",
-      duration: "2024",
     },
   ],
 };
