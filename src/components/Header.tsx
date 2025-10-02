@@ -176,20 +176,41 @@ export default function Header() {
                                         hidden: { opacity: 0, x: 20 },
                                         show: { opacity: 1, x: 0 },
                                     }}
+                                  >
+                                    <motion.div
+                                      key={link.path}
+                                      variants={{
+                                        hidden: { opacity: 0, x: 20 },
+                                        show: { opacity: 1, x: 0 },
+                                      }}
                                     >
-                                    <Link
+                                      <Link
                                         href={link.path}
                                         onClick={() => setOpen(false)}
-                                        className={`capitalize text-base font-medium transition-colors
-                                        ${
+                                        className={`capitalize text-base font-medium relative transition-colors duration-300
+                                          ${
                                             isActive
-                                            ? "text-primary font-semibold"
-                                            : "text-muted-foreground hover:text-foreground"
+                                              ? "text-primary font-bold"
+                                              : "text-muted-foreground hover:text-foreground"
                                           }
                                         `}
-                                    >
+                                      >
                                         {link.name}
-                                    </Link>
+
+                                        {/* ANIMATED UNDERLINE FOR ACTIVE LINKS */}
+                                        {isActive && (
+                                          <motion.span
+                                            layoutId="activeLink"
+                                            className="absolute -bottom-1 left-0 h-[2px] w-full bg-primary"
+                                            initial={{ opacity: 0, scaleX: 0 }}
+                                            animate={{ opacity: 1, scaleX: 1 }}
+                                            exit={{ opacity: 0, scaleX: 0 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                          />
+                                        )}
+                                      </Link>
+                                    </motion.div>
+
                                   </motion.div>
                                 );
                                 })}
