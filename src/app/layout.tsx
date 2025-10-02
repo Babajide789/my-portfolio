@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from './../components/Header';
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Babajide Portfolio",
@@ -22,7 +23,7 @@ export default function RootLayout({
         <PageTransition>
           {children}
         </PageTransition>
-        
+        <Analytics />
       </body>
     </html>
   );

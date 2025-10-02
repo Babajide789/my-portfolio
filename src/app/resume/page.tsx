@@ -97,7 +97,7 @@ export default function Resume() {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-3 py-2 sm:px-4 sm:py-3 rounded-xl font-semibold capitalize transition-all duration-300 text-xs sm:text-sm md:text-base
+              className={`px-3 py-2 sm:px-4 sm:py-3 cursor-pointer rounded-xl font-semibold capitalize transition-all duration-300 text-xs sm:text-sm md:text-base
                 ${activeTab === tab
                   ? "bg-black text-white shadow-md scale-105"
                   : "bg-neutral-800 text-neutral-400 hover:text-white hover:bg-neutral-700"
