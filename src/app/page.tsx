@@ -13,16 +13,16 @@ export default function Home() {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24 gap-2">
           {/* TEXT */}
           <div className="w-full xl:w-1/2 text-center sm:text-left order-2 xl:order-none flex flex-col items-center sm:items-start">
-            <span className="text-accent text-lg">Software Developer</span>
+            <span className="text-accent text-lg">Frontend Developer</span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-2 mb-6 leading-tight">
               Hello, I&apos;m <br /> Babajide Yahaya
             </h1>
 
-            <p className="max-w-[500px] mb-9 text-white/70 text-sm sm:text-base">
-              I excel at building elegant digital experiences and I am
-              proficient in various programming languages and technologies.
-            </p>
-
+            <p className="max-w-[500px] mb-9 text-white/70 text-sm sm:text-base"> 
+              I’m passionate about turning ideas into interactive realities by crafting seamless user experiences 
+              that don’t just look good, but feel effortless to use. My focus is on precision, performance, and purpose. 
+            </p>           
+            
             {/* ACTIONS BUTTONS */}
             <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
               {/* DOWNLOAD CV */}

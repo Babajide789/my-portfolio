@@ -7,21 +7,20 @@ import { useState } from "react";
 
 const about = {
   title: "About Me",
-  description: "I work for growth and inspiration.",
+  description: "Driven by creativity and precision. I craft web experiences that inspire and perform.",
   info: [
     { fieldName: "Name", fieldValue: "Babajide Mohammed Yahaya" },
     { fieldName: "Phone", fieldValue: "(+234) 703 016 8883" },
     { fieldName: "Experience", fieldValue: "4+ Years" },
     { fieldName: "Nationality", fieldValue: "Nigerian" },
     { fieldName: "Email", fieldValue: "yahayababajide@gmail.com" },
-    { fieldName: "Freelance", fieldValue: "Available" },
     { fieldName: "Language", fieldValue: "English, Yoruba" },
   ],
 };
 
 const experience = {
   title: "My Experience",
-  description: "Always working for growth.",
+  description: "Turning ideas into real-world solutions through consistent growth and collaboration.",
   items: [
     {
       company: "OCIMS Tech Solution",
@@ -38,7 +37,7 @@ const experience = {
 
 const education = {
   title: "My Education",
-  description: "Always studying and improving.",
+  description: "Learning never stops, every lesson fuels my craft and shapes my code.",
   items: [
     {
       institution: "NASFAT Activate Training Program in Tech",
@@ -65,7 +64,7 @@ const education = {
 
 const skills = {
   title: "My Skills",
-  description: "Always upskilling.",
+  description: "Building beautiful, responsive, and purposeful interfaces with the tools I have mastered.",
   skillList: [
     { icon: <FaHtml5 />, name: "HTML 5" },
     { icon: <FaCss3 />, name: "CSS 3" },

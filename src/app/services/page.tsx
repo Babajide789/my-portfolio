@@ -62,7 +62,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 mx-auto max-w-2xl text-center leading-relaxed text-white/70 text-lg"
           >
-            Here are the main areas where I can help bring your ideas to life.
+            Here are the main areas where I can help bring your ideas to life:
           </motion.p>
         </div>
 
