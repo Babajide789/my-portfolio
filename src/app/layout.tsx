@@ -4,6 +4,7 @@ import Header from "./../components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Analytics } from "@vercel/analytics/react";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Babajide Yahaya | Frontend Developer Portfolio",
@@ -44,8 +45,7 @@ export const metadata: Metadata = {
     title: "Babajide Yahaya | Frontend Developer Portfolio",
     description:
       "Modern, responsive web designs and front-end projects by Babajide Yahaya.",
-    images: ["/og-thumbnail.png"], // same thumbnail
-    creator: "@OCIMS_J", // optional
+    images: ["/og-thumbnail.png"],
   },
 };
 
