@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "Tailwind CSS",
   ],
   authors: [{ name: "Babajide Yahaya", url: "https://my-portfolio-five-ivory-61.vercel.app/" }],
-  metadataBase: new URL("https://my-portfolio-five-ivory-61.vercel.app/"), // ← replace with your actual deployed URL (on vercel)
+  metadataBase: new URL("https://my-portfolio-five-ivory-61.vercel.app/"),
   openGraph: {
     title: "Babajide Yahaya | Frontend Developer Portfolio",
     description:
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Babajide Yahaya Portfolio",
     images: [
       {
-        url: "/og-thumbnail.png", // ← put your thumbnail image here (should be in /public)
+        url: "/og-thumbnail.png",
         width: 1200,
         height: 630,
         alt: "Babajide Yahaya Portfolio Preview",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Babajide Yahaya | Frontend Developer Portfolio",
     description:
       "Modern, responsive web designs and front-end projects by Babajide Yahaya.",
-    images: ["/og-thumbnail.png"],
+    // images: ["/og-thumbnail.png"],
   },
 };
 
