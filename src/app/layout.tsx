@@ -4,7 +4,7 @@ import Header from "./../components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import { Analytics } from "@vercel/analytics/react";
-import Image from "next/image";
+
 
 export const metadata: Metadata = {
   title: "Babajide Yahaya | Frontend Developer Portfolio",
@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     "JavaScript",
     "Tailwind CSS",
   ],
-  authors: [{ name: "Babajide Yahaya", url: "https://vercel.com/babajides-projects-ad363937/my-portfolio" }],
-  metadataBase: new URL("https://vercel.com/babajides-projects-ad363937/my-portfolio"), // ← replace with your actual deployed URL (on vercel)
+  authors: [{ name: "Babajide Yahaya", url: "https://my-portfolio-five-ivory-61.vercel.app/" }],
+  metadataBase: new URL("https://my-portfolio-five-ivory-61.vercel.app/"), // ← replace with your actual deployed URL (on vercel)
   openGraph: {
     title: "Babajide Yahaya | Frontend Developer Portfolio",
     description:
       "Explore the creative works and projects by Babajide Yahaya — modern, responsive web designs built with React and Next.js.",
-    url: "https://vercel.com/babajides-projects-ad363937/my-portfolio",
+    url: "https://my-portfolio-five-ivory-61.vercel.app/",
     siteName: "Babajide Yahaya Portfolio",
     images: [
       {
