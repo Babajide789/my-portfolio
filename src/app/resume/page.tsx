@@ -113,7 +113,7 @@ export default function Resume() {
           {activeTab === "experience" && (
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
-                {experience.title} <span className="text-accent">🚀</span>
+                {experience.title}
               </h3>
               <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
                 {experience.description}
@@ -143,7 +143,7 @@ export default function Resume() {
           {activeTab === "education" && (
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
-                {education.title} <span className="text-accent">📚</span>
+                {education.title}
               </h3>
               <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
                 {education.description}
@@ -173,7 +173,7 @@ export default function Resume() {
           {activeTab === "skills" && (
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
-                {skills.title} <span className="text-accent">⚡</span>
+                {skills.title}
               </h3>
               <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
                 {skills.description}
@@ -200,7 +200,7 @@ export default function Resume() {
           {activeTab === "about" && (
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">
-                {about.title} <span className="text-accent">👤</span>
+                {about.title}
               </h3>
               <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
                 {about.description}
