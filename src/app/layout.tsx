@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Babajide Yahaya Portfolio",
     images: [
       {
-        url: "/og-thumbnail.png",
+        url: "https://my-portfolio-five-ivory-61.vercel.app/og-thumbnail.png",
         width: 1200,
         height: 630,
         alt: "Babajide Yahaya Portfolio Preview",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     title: "Babajide Yahaya | Frontend Developer Portfolio",
     description:
       "Modern, responsive web designs and front-end projects by Babajide Yahaya.",
-    // images: ["/og-thumbnail.png"],
+    images: ["https://my-portfolio-five-ivory-61.vercel.app/og-thumbnail.png"],
   },
 };
 
