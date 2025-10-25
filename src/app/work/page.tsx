@@ -28,7 +28,7 @@ const projects = [
       { name: "Resend API" },
     ],
     image: "/projects/hamtec.png",
-    live: "https://hamtecproject.com",
+    live: "https://hamtec-project.vercel.app/",
     github: "https://github.com/Babajide789/Hamtec-Project",
   },
   {
