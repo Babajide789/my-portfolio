@@ -7,11 +7,12 @@ import { Swiper, SwiperSlide } from "swiper/react"
 import type { Swiper as SwiperType } from "swiper"
 import "swiper/css"
 
-import { BsArrowUpRight, BsGithub } from "react-icons/bs"
+import { BsGithub } from "react-icons/bs"
 import Link from "next/link"
 import Image from "next/image"
 import WorkSlidersBtns from "@/components/WorkSliderBtns"
 import Tooltip from "@/components/Tooltip"
+import { ExternalLink } from "lucide-react"
 
 // PROJECTS
 const projects = [
@@ -140,11 +141,12 @@ export default function Work() {
                   <Link href={project.live} target="_blank">
                     <Tooltip content="Live Project" position="top">
                       <div className="w-[48px] h-[48px] sm:w-[55px] sm:h-[55px] rounded-full bg-accent flex justify-center items-center group hover:bg-accent/90 hover:shadow-[0_0_20px_4px_rgba(0,255,153,0.5)] hover:scale-105 duration-300 transition-all hover:text-black">
-                        <BsArrowUpRight className="text-black text-xl sm:text-2xl" />
+                        <ExternalLink className="text-black text-xl sm:text-2xl"/>
                       </div>
                     </Tooltip>
                   </Link>
                 )}
+
                 {project.github && (
                   <Link href={project.github} target="_blank">
                     <Tooltip content="GitHub Repo" position="bottom">
@@ -154,6 +156,7 @@ export default function Work() {
                     </Tooltip>
                   </Link>
                 )}
+
               </div>
 
             </div>
@@ -167,7 +170,9 @@ export default function Work() {
               className="h-[300px] sm:h-[400px] md:h-[450px] xl:h-[520px] mb-8 sm:mb-12"
               onSlideChange={handleSlideChange}
             >
+
               {projects.map((item, index) => (
+
                 <SwiperSlide key={index} className="w-full">
                   <div className="h-full relative group flex justify-center items-center bg-black/20 rounded-xl overflow-hidden shadow-lg border border-white/10">
                     {/* FAKE BROWSER */}

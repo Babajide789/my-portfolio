@@ -84,24 +84,25 @@ export default function Header() {
                     className="md:hidden relative flex items-center justify-center w-12 h-12 rounded-md text-black cursor-pointer"
                 >
                     <motion.span
-                        initial={false}
-                        animate={open ? "open" : "closed"}
-                        className="flex flex-col justify-between w-6 h-5 relative"
+                      initial={false}
+                      animate={open ? "open" : "closed"}
+                      className="flex flex-col justify-between w-6 h-5 relative"
                     >
-                        {/* TOP LINE */}
-                        <motion.span
+                      {/* TOP LINE */}
+                      <motion.span
                         variants={{
-                            closed: { rotate: 0, y: 0 },
-                            open: { rotate: 45, y: 8 },
+                          closed: { rotate: 0, y: 0 },
+                          open: { rotate: 45, y: 8 },
                         }}
                         transition={{ duration: 0.3 }}
                         className="absolute top-0 left-0 h-[2px] w-full bg-current rounded"
-                        />
+                      />
+
                         {/* MIDDLE LINE */}
                         <motion.span
                         variants={{
-                            closed: { opacity: 1 },
-                            open: { opacity: 0 },
+                          closed: { opacity: 1 },
+                          open: { opacity: 0 },
                         }}
                         transition={{ duration: 0.2 }}
                         className="absolute top-1/2 left-0 -translate-y-1/2 h-[2px] w-full bg-current rounded"
@@ -109,8 +110,8 @@ export default function Header() {
                         {/* BOTTOM LINE */}
                         <motion.span
                         variants={{
-                            closed: { rotate: 0, y: 0 },
-                            open: { rotate: -45, y: -10 },
+                          closed: { rotate: 0, y: 0 },
+                          open: { rotate: -45, y: -10 },
                         }}
                         transition={{ duration: 0.3 }}
                         className="absolute bottom-0 left-0 h-[2px] w-full bg-current rounded"
@@ -119,124 +120,125 @@ export default function Header() {
                 </button>
 
                 <Dialog.Portal>
-                    {/* OVERLAY */}
-                    <AnimatePresence>
-                        {open && (
-                            <Dialog.Overlay asChild>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[99]"
-                            />
-                            </Dialog.Overlay>
-                        )}
-                    </AnimatePresence>
+                  {/* OVERLAY */}
+                  <AnimatePresence>
+                    {open && (
+                      <Dialog.Overlay asChild>
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[99]"
+                        />
+                      </Dialog.Overlay>
+                    )}
+                  </AnimatePresence>
 
-                    {/* PANEL */}
-                    <AnimatePresence>
-                        {open && (
-                        <Dialog.Content asChild forceMount>
-                            <motion.div
-                            initial={{ x: "100%" }}
-                            animate={{ x: 0 }}
-                            exit={{ x: "100%" }}
-                            transition={{ type: "spring", stiffness: 280, damping: 30 }}
-                            className="fixed top-0 right-0 h-full w-64 bg-background border-l border-border p-6 shadow-lg flex flex-col gap-6 z-[100]"
-                            >
-                            {/* LOGO */}
-                            <div className="text-lg font-bold text-primary">
-                                Babajide <span className="text-accent">.</span>
-                            </div>
+                  {/* PANEL */}
+                  <AnimatePresence>
+                      {open && (
+                      <Dialog.Content asChild forceMount>
+                        <motion.div
+                          initial={{ x: "100%" }}
+                          animate={{ x: 0 }}
+                          exit={{ x: "100%" }}
+                          transition={{ type: "spring", stiffness: 280, damping: 30 }}
+                          className="fixed top-0 right-0 h-full w-64 bg-background border-l border-border p-6 shadow-lg flex flex-col gap-6 z-[100]"
+                        >
+                          {/* LOGO */}
+                          <div className="text-lg font-bold text-primary">
+                            Babajide <span className="text-accent">.</span>
+                          </div>
 
-                            {/* LINKS WITH STAGGER */}
-                            <motion.nav
-                                initial="hidden"
-                                animate="show"
-                                exit="hidden"
-                                variants={{
-                                hidden: {},
-                                show: {
-                                  transition: { staggerChildren: 0.08, delayChildren: 0.1 },
-                                },
-                                }}
-                                className="flex flex-col gap-4"
-                            >
-                                {links.map((link) => {
-                                const isActive =
-                                    link.path === "/"
-                                    ? pathname === "/"
-                                    : pathname.startsWith(link.path);
+                          {/* LINKS WITH STAGGER */}
+                          <motion.nav
+                            initial="hidden"
+                            animate="show"
+                            exit="hidden"
+                            variants={{
+                            hidden: {},
+                            show: {
+                              transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+                            },
+                            }}
+                            className="flex flex-col gap-4"
+                          >
+                            {links.map((link) => {
+                              const isActive =
+                                link.path === "/"
+                                ? pathname === "/"
+                                : pathname.startsWith(link.path);
 
-                                return (
+                              return (
+                                <motion.div
+                                  key={link.path}
+                                  variants={{
+                                      hidden: { opacity: 0, x: 20 },
+                                      show: { opacity: 1, x: 0 },
+                                  }}
+                                >
                                   <motion.div
                                     key={link.path}
                                     variants={{
-                                        hidden: { opacity: 0, x: 20 },
-                                        show: { opacity: 1, x: 0 },
+                                      hidden: { opacity: 0, x: 20 },
+                                      show: { opacity: 1, x: 0 },
                                     }}
                                   >
-                                    <motion.div
-                                      key={link.path}
-                                      variants={{
-                                        hidden: { opacity: 0, x: 20 },
-                                        show: { opacity: 1, x: 0 },
-                                      }}
+                                    <Link
+                                      href={link.path}
+                                      onClick={() => setOpen(false)}
+                                      className={`capitalize text-base font-medium relative transition-colors duration-300
+                                        ${
+                                          isActive
+                                            ? "text-primary font-bold"
+                                            : "text-muted-foreground hover:text-foreground"
+                                        }
+                                      `}
                                     >
-                                      <Link
-                                        href={link.path}
-                                        onClick={() => setOpen(false)}
-                                        className={`capitalize text-base font-medium relative transition-colors duration-300
-                                          ${
-                                            isActive
-                                              ? "text-primary font-bold"
-                                              : "text-muted-foreground hover:text-foreground"
-                                          }
-                                        `}
-                                      >
-                                        {link.name}
+                                      {link.name}
 
-                                        {/* ANIMATED UNDERLINE FOR ACTIVE LINKS */}
-                                        {isActive && (
-                                          <motion.span
-                                            layoutId="activeLink"
-                                            className="absolute -bottom-1 left-0 h-[2px] w-full bg-primary"
-                                            initial={{ opacity: 0, scaleX: 0 }}
-                                            animate={{ opacity: 1, scaleX: 1 }}
-                                            exit={{ opacity: 0, scaleX: 0 }}
-                                            transition={{ duration: 0.3, ease: "easeInOut" }}
-                                          />
-                                        )}
-                                      </Link>
-                                    </motion.div>
-
+                                      {/* ANIMATED UNDERLINE FOR ACTIVE LINKS */}
+                                      {isActive && (
+                                        <motion.span
+                                          layoutId="activeLink"
+                                          className="absolute -bottom-1 left-0 h-[2px] w-full bg-primary"
+                                          initial={{ opacity: 0, scaleX: 0 }}
+                                          animate={{ opacity: 1, scaleX: 1 }}
+                                          exit={{ opacity: 0, scaleX: 0 }}
+                                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                                        />
+                                      )}
+                                    </Link>
                                   </motion.div>
-                                );
-                                })}
 
-                                {/* CTA BUTTON */}
-                                <motion.div
+                                </motion.div>
+                              );
+                            })}
+
+                              {/* CTA BUTTON */}
+                              <motion.div
                                 variants={{
                                   hidden: { opacity: 0, x: 20 },
                                   show: { opacity: 1, x: 0 },
                                 }}
-                                >
+                              >
                                 <Link href="/contact" onClick={() => setOpen(false)}>
-                                    <button
+                                  <button
                                     className="mt-4 w-full px-6 py-2 rounded-full font-medium
                                       bg-primary text-primary-foreground
                                       shadow-md transition-all duration-300 hover:bg-primary/90 hover:scale-105 cursor-pointer"
-                                    >
+                                  >
                                     Hire Me
-                                    </button>
+                                  </button>
+
                                 </Link>
-                                </motion.div>
+                              </motion.div>
                             </motion.nav>
-                            </motion.div>
-                        </Dialog.Content>
-                        )}
-                    </AnimatePresence>
+                          </motion.div>
+                      </Dialog.Content>
+                      )}
+                  </AnimatePresence>
                 </Dialog.Portal>
             </Dialog.Root>
         </div>

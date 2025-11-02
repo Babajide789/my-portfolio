@@ -39,6 +39,8 @@ const services = [
   },
 ];
 
+
+
 export default function Services() {
   return (
     <section className="py-20 px-6 md:px-12 lg:px-20 text-gray-900 bg-[#1e1e22]">

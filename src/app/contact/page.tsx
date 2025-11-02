@@ -21,6 +21,7 @@ const info = [
   },
 ];
 
+
 export default function Contact() {
   return (
     <motion.section

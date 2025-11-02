@@ -18,6 +18,7 @@ const about = {
   ],
 };
 
+
 const experience = {
   title: "My Experience",
   description: "Turning ideas into real-world solutions through consistent growth and collaboration.",
@@ -62,6 +63,7 @@ const education = {
   ],
 };
 
+
 const skills = {
   title: "My Skills",
   description: "Building beautiful, responsive, and purposeful interfaces with the tools I have mastered.",
@@ -75,6 +77,7 @@ const skills = {
     { icon: <FaFigma />, name: "Figma" },
   ],
 };
+
 
 export default function Resume() {
   const [activeTab, setActiveTab] = useState("experience");
@@ -118,6 +121,7 @@ export default function Resume() {
               <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
                 {experience.description}
               </p>
+
               <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
                 {experience.items.map((item, index) => (
                   <div
@@ -148,6 +152,7 @@ export default function Resume() {
               <p className="text-neutral-400 mb-4 sm:mb-6 text-sm sm:text-base">
                 {education.description}
               </p>
+              
               <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
                 {education.items.map((item, index) => (
                   <div
