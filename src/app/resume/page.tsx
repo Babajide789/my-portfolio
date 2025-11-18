@@ -61,8 +61,6 @@ const experience = {
   ],
 };
 
-
-
 const education = {
   title: "My Education",
   description: "Learning never stops, every lesson fuels my craft and shapes my code.",
@@ -123,7 +121,7 @@ export default function Resume() {
       <div className="w-full max-w-6xl h-full mx-auto flex flex-col xl:flex-row gap-8 sm:gap-10">
         
         {/* Tabs Menu */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:flex xl:flex-col xl:w-1/4 justify-center">
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 xl:flex xl:flex-col xl:w-1/4 xl:-mt-103 justify-center">
           {["experience", "education", "skills", "about"].map((tab) => (
             <button
               key={tab}
