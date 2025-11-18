@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma } from "react-icons/fa";
-import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiShadcnui, SiTailwindcss } from "react-icons/si";
 import { useState } from "react";
 
 const about = {
@@ -18,23 +18,50 @@ const about = {
   ],
 };
 
-
 const experience = {
   title: "My Experience",
-  description: "Turning ideas into real-world solutions through consistent growth and collaboration.",
+  description:
+    "Building functional, user-focused interfaces through real projects, collaborations, and continuous learning.",
   items: [
     {
-      company: "OCIMS Tech Solution",
+      company: "Jayy Tech Solution",
       position: "Frontend Developer",
       duration: "2024 - Present",
+      summary:
+        "Developing production-level interfaces, optimizing user flows, and implementing reusable components for client-facing applications using React, Tailwind, and modern tooling.",
     },
     {
       company: "Hamtec Project",
       position: "Frontend Developer Intern",
       duration: "2023 - 2024",
+      summary:
+        "Assisted in building UI layouts, improving mobile responsiveness, and collaborating with senior developers to ship features efficiently while learning best practices.",
+    },
+    {
+      company: "Freelance & Contract Projects",
+      position: "Frontend Developer",
+      duration: "2022 - Present",
+      summary:
+        "Delivered responsive landing pages, portfolio sites, and small web apps for individuals and SMEs, focusing on clean code, animations, and smooth user experiences.",
+    },
+    {
+      company: "Open Source / GitHub Contributions",
+      position: "Contributor",
+      duration: "2023 - Present",
+      summary:
+        "Contributed to community-driven projects by enhancing UI components, improving accessibility, fixing bugs, and refining documentation for developer clarity.",
+    },
+    {
+      company: "Personal Development Projects",
+      position: "Project Developer",
+      duration: "2022 - Present",
+      summary:
+        "Built hands-on projects including e-commerce pages, form wizards, API-based apps, and utility tools—strengthening skills in state management, API integration, and responsive design.",
     },
   ],
 };
+
+
 
 const education = {
   title: "My Education",
@@ -75,6 +102,8 @@ const skills = {
     { icon: <SiNextdotjs />, name: "Next.js" },
     { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <FaFigma />, name: "Figma" },
+    { icon: <SiShadcnui />, name: "ShadCN" },
+
   ],
 };
 
@@ -136,6 +165,9 @@ export default function Resume() {
                     </h4>
                     <p className="text-neutral-400 mt-1 text-sm sm:text-base">
                       {item.company}
+                    </p>
+                    <p className="text-neutral-400 mt-1 text-sm sm:text-base">
+                      {item.summary}
                     </p>
                   </div>
                 ))}

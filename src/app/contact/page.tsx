@@ -73,19 +73,19 @@ export default function Contact() {
               <select className="w-full p-3 rounded-lg bg-neutral-800 text-white outline-none border border-neutral-700 focus:border-accent transition-colors">
                 <option value="">Select a service</option>
 
-                <optgroup label="💻 Web Development">
+                <optgroup label="Web Development">
                   <option value="website">Custom Website Development</option>
                   <option value="landing">Landing Page Design</option>
                   <option value="portfolio">Portfolio / Personal Website</option>
                 </optgroup>
 
-                <optgroup label="⚙️ Frontend Engineering">
+                <optgroup label="Frontend Engineering">
                   <option value="react">React & Next.js Web Applications</option>
                   <option value="responsive">Responsive Web Design</option>
-                  <option value="integration">API Integration & Dynamic Content</option>
+                  <option value="integration">API Integration</option>
                 </optgroup>
 
-                <optgroup label="🚀 Optimization & Support">
+                <optgroup label="Optimization & Support">
                   <option value="maintenance">Website Maintenance & Updates</option>
                   <option value="performance">Performance Optimization</option>
                   <option value="consult">Design & Development Consultation</option>
