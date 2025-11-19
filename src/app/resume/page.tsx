@@ -161,7 +161,7 @@ export default function Resume() {
                     <h4 className="text-lg sm:text-xl font-semibold mt-2">
                       {item.position}
                     </h4>
-                    <p className="text-white mt-1 text-lg sm:text-base">
+                    <p className="text-white mt-1 text-sm sm:text-base">
                       {item.company}
                     </p>
                     <p className="text-neutral-400 mt-1 text-sm sm:text-base">
